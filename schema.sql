@@ -1,13 +1,3 @@
--- create database grocerylist;
-
--- use  grocerylist;
-
--- create table groceries(
---   groceryid int auto_increment primary key,
---   name varchar(20) not null,
---   image varchar(100) not null
--- );
-
 -- ---
 -- Globals
 -- ---
@@ -16,68 +6,121 @@
 -- SET FOREIGN_KEY_CHECKS=0;
 
 -- ---
--- Table 'Product'
+-- Table 'customer'
 -- 
 -- ---
 
-DROP TABLE IF EXISTS `Product`;
+DROP TABLE IF EXISTS `customer`;
     
-CREATE TABLE `Product` (
+CREATE TABLE `customer` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `Name` VARCHAR NULL DEFAULT NULL,
-  `Image` VARCHAR(100) NULL DEFAULT NULL,
+  `first name` VARCHAR NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
 -- ---
--- Table 'Category'
+-- Table 'product'
 -- 
 -- ---
 
-DROP TABLE IF EXISTS `Category`;
+DROP TABLE IF EXISTS `product`;
     
-CREATE TABLE `Category` (
+CREATE TABLE `product` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `Name` INTEGER NULL DEFAULT NULL,
+  `name` VARCHAR NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
 -- ---
--- Table 'Product/Category'
--- Join Table
+-- Table 'order'
+-- 
 -- ---
 
-DROP TABLE IF EXISTS `Product/Category`;
+DROP TABLE IF EXISTS `order`;
     
-CREATE TABLE `Product/Category` (
+CREATE TABLE `order` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `ProductId` INTEGER NULL DEFAULT NULL,
-  `CategoryId` INTEGER NULL DEFAULT NULL,
+  `customer id` INTEGER NULL DEFAULT NULL,
+  `status` VARCHAR NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) COMMENT 'Join Table';
+);
+
+-- ---
+-- Table 'category'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `category`;
+    
+CREATE TABLE `category` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` VARCHAR NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'category_product'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `category_product`;
+    
+CREATE TABLE `category_product` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `product id` INTEGER NULL DEFAULT NULL,
+  `category id` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'number of product'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `number of product`;
+    
+CREATE TABLE `number of product` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `order_id` INTEGER NULL DEFAULT NULL,
+  `product_id` INTEGER NULL DEFAULT NULL,
+  `number of product` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
 
 -- ---
 -- Foreign Keys 
 -- ---
 
-ALTER TABLE `Product/Category` ADD FOREIGN KEY (ProductId) REFERENCES `Product` (`id`);
-ALTER TABLE `Product/Category` ADD FOREIGN KEY (CategoryId) REFERENCES `Category` (`id`);
+ALTER TABLE `order` ADD FOREIGN KEY (customer id) REFERENCES `customer` (`id`);
+ALTER TABLE `category_product` ADD FOREIGN KEY (product id) REFERENCES `product` (`id`);
+ALTER TABLE `category_product` ADD FOREIGN KEY (category id) REFERENCES `category` (`id`);
+ALTER TABLE `number of product` ADD FOREIGN KEY (order_id) REFERENCES `order` (`id`);
+ALTER TABLE `number of product` ADD FOREIGN KEY (product_id) REFERENCES `product` (`id`);
 
 -- ---
 -- Table Properties
 -- ---
 
--- ALTER TABLE `Product` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Category` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Product/Category` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `customer` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `product` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `order` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `category` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `category_product` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `number of product` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ---
 -- Test Data
 -- ---
 
--- INSERT INTO `Product` (`id`,`Name`,`Image`) VALUES
--- ('','','');
--- INSERT INTO `Category` (`id`,`Name`) VALUES
+-- INSERT INTO `customer` (`id`,`first name`) VALUES
 -- ('','');
--- INSERT INTO `Product/Category` (`id`,`ProductId`,`CategoryId`) VALUES
+-- INSERT INTO `product` (`id`,`name`) VALUES
+-- ('','');
+-- INSERT INTO `order` (`id`,`customer id`,`status`) VALUES
 -- ('','','');
+-- INSERT INTO `category` (`id`,`name`) VALUES
+-- ('','');
+-- INSERT INTO `category_product` (`id`,`product id`,`category id`) VALUES
+-- ('','','');
+-- INSERT INTO `number of product` (`id`,`order_id`,`product_id`,`number of product`) VALUES
+-- ('','','','');
