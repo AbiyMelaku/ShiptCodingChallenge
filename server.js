@@ -29,10 +29,10 @@ var connection = mysql.createConnection({
   host : "localhost",
   user : "root",
   password : "",
-  database : "grocerylist"
+  database : "grocery_list"
 });
 
-//connection.connect();
+connection.connect();
 
 
 //==========================================================//
@@ -68,7 +68,7 @@ var connection = mysql.createConnection({
 
 //Retrieve groceries from db
 app.get('/home', function(req, res){
-  dbpool.query('select * from groceries', (err,rows,fields) => {
+  connection.query('select * from product', (err,rows,fields) => {
     res.json(rows);
   });
 })
