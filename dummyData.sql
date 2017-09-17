@@ -312,41 +312,52 @@ insert into category_product (product_id, category_id)
 
   
 -- ---
--- 'order_products' data
+-- 'order_products' data LMAO  this is me every fucking day
 -- 
 -- ---
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(1, 21, 4);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(1, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-01-02 00:00:00')), 21, 4);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(2, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-01-05 00:00:00')), 17, 7);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(2, 17, 7);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(3, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-02-01 00:00:00')), 8, 2);
+  
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(4, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-02-01 00:00:00')), 4, 1);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(3, 8, 2);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(5, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-03-03 00:00:00')), 10, 1);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(4, 4, 1);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(6, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-01-08 00:00:00')), 19, 3);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(5, 10, 1);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(7, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-01-12 00:00:00')), 20, 12);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(6, 19, 3);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(8, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-02-02 00:00:00')), 27, 6);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(7, 20, 12);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(9, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-02-19 00:00:00')), 5, 2);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(8, 27, 6);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(10, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-03-30 00:00:00')), 26, 7);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(9, 5, 2);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(11, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-03-04 00:00:00')), 2, 8);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(10, 26, 7);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(12, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-02-12 00:00:00')), 1, 9);
+  
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(12, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-01-01 00:00:00')), 1, 9);
 
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(11, 2, 8);
-
-insert into order_products (order_id, product_id, number_of_product)
-  VALUES(12, 1, 9);
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(12, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-01-01 00:00:00')), 1, 9);
+  
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(12, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-01-19 00:00:00')), 1, 9);
+  
+insert into order_products (order_id, order_date, product_id, number_of_product)
+  VALUES(12, FROM_UNIXTIME(UNIX_TIMESTAMP('2017-03-21 00:00:00')), 1, 9);

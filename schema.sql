@@ -86,9 +86,10 @@ DROP TABLE IF EXISTS `order_products`;
     
 CREATE TABLE `order_products` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `order_date` DATETIME NOT NULL,
   `order_id` INTEGER NOT NULL,
   `product_id` INTEGER NOT NULL,
-  `number_of_product` INTEGER NOT NULL,
+  `number_of_product` INTEGER NOT NULL, 
   PRIMARY KEY (`id`)
 );
 
