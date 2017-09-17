@@ -76,7 +76,29 @@ app.get('/home', function(req, res){
 
 
 
+app.get('/fiona', function(req, res){
+  connection.query('select * from product', (err,rows,fields) => {
+    res.json(rows);
+  });
+})
 
+app.get('/mac', function(req, res){
+  connection.query('select * from product', (err,rows,fields) => {
+    res.json(rows);
+  });
+})
+
+app.get('/johnny', function(req, res){
+  connection.query('select * from product', (err,rows,fields) => {
+    res.json(rows);
+  });
+})
+
+app.get('/billy', function(req, res){
+  connection.query('select * from product', (err,rows,fields) => {
+    res.json(rows);
+  });
+})
 
 
 
