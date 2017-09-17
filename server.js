@@ -77,7 +77,7 @@ app.get('/fiona', function(req, res){
 
 //date range 
 
-app.get('/shit', function(req, res){   
+app.get('/determine', function(req, res){   
   var type = "%Y-%m-%d"   //default day
   if( req.query.type === "week" ){     
     type = "%Y-%x";   
